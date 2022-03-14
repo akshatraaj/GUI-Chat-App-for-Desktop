@@ -2,7 +2,6 @@ import socket
 from threading import Thread
 from tkinter import *
 
-#nickname = input("Choose your nickname: ")
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 ip_address = "127.0.0.1"
 port = 8000
@@ -47,7 +46,6 @@ class GUI():
         
     def goAhead(self, name):
         self.login.destroy()
-        #self.name = name
         self.layout(name)
         rcv = Thread(target=self.receive)
         rcv.start()
@@ -136,12 +134,3 @@ class GUI():
             break
         
 g = GUI()
-#def write():
- #   while True:
-  #      message = "{}: {}".format(nickname,input(""))
-   #     client.send(message.encode("utf-8"))
-
-#receive_thread = Thread(target=receive)
-#receive_thread.start()
-#write_thread = Thread(target=write)
-#write_thread.start()
